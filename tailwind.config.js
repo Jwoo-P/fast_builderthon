@@ -7,6 +7,19 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Flat UI Colors - defo 팔레트
+        flat: {
+          'wet-asphalt': '#2c3e50',
+          'clouds': '#ecf0f1',
+          'peter-river': '#3498db',
+          'alizarin': '#e74c3c',
+          'concrete': '#95a5a6',
+          'silver': '#bdc3c7',
+          'midnight-blue': '#34495e',
+          'turquoise': '#1abc9c',
+          'emerald': '#2ecc71',
+          'sun-flower': '#f1c40f',
+        },
         primary: {
           50: '#f0f9ff',
           100: '#e0f2fe',

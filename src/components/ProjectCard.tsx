@@ -2,70 +2,79 @@ import { Project } from '../types';
 
 interface ProjectCardProps {
   project: Project;
+  onOpenModal: (project: Project) => void;
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, onOpenModal }: ProjectCardProps) {
   return (
-    <div className="card-hover group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-800 p-6 shadow-lg border border-gray-200 dark:border-gray-700">
-      {/* 카드 상단 헤더 */}
-      <div className="mb-4">
-        <div className="flex items-start justify-between mb-2">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-            {project.name}
-          </h3>
+    <div className="card-hover group relative overflow-hidden rounded-2xl shadow-lg flex flex-col h-full" style={{ backgroundColor: '#34495e', borderColor: '#2c3e50' }}>
+      {/* 프로젝트 이미지 */}
+      {project.image && (
+        <div className="relative w-full h-48 overflow-hidden" style={{ backgroundColor: '#2c3e50' }}>
+          <img
+            src={project.image}
+            alt={project.name}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           {project.category && (
-            <span className="px-3 py-1 text-xs font-semibold rounded-full bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300">
+            <span className="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm" style={{ backgroundColor: 'rgba(236, 240, 241, 0.9)', color: '#2c3e50' }}>
               {project.category}
             </span>
           )}
         </div>
-        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+      )}
+
+      {/* 카드 내용 */}
+      <div className="flex flex-col flex-1 p-6">
+        <h3 className="text-2xl font-bold transition-colors mb-3 group-hover:text-flat-peter-river" style={{ color: '#ecf0f1' }}>
+          {project.name}
+        </h3>
+        
+        <p className="leading-relaxed mb-4 flex-1" style={{ color: '#ecf0f1', opacity: 0.9 }}>
           {project.description}
         </p>
-      </div>
 
-      {/* 기술 스택 */}
-      <div className="mb-6">
-        <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-400 mb-2">
-          사용된 기술
-        </h4>
-        <div className="flex flex-wrap gap-2">
-          {project.technologies.map((tech, index) => (
-            <span
-              key={index}
-              className="px-3 py-1 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600"
-            >
-              {tech}
-            </span>
-          ))}
+        {/* 기술 스택 */}
+        <div className="mb-6">
+          <h4 className="text-sm font-semibold mb-2" style={{ color: '#ecf0f1', opacity: 0.8 }}>
+            사용된 기술
+          </h4>
+          <div className="flex flex-wrap gap-2">
+            {project.technologies.map((tech, index) => (
+              <span
+                key={index}
+                className="px-3 py-1 text-xs font-medium rounded-md"
+                style={{ backgroundColor: '#2c3e50', color: '#ecf0f1', border: '1px solid #34495e' }}
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* 링크 버튼 */}
-      <a
-        href={project.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white font-medium rounded-lg transition-colors duration-200 group/link"
-      >
-        <span>서비스 확인하기</span>
-        <svg
-          className="w-4 h-4 group-hover/link:translate-x-1 transition-transform"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
+        {/* 자세히 보기 버튼 */}
+        <button
+          onClick={() => onOpenModal(project)}
+          className="btn-flat-primary inline-flex items-center justify-center gap-2 px-4 py-3 font-medium rounded-lg group/link hover:shadow-lg cursor-pointer"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-          />
-        </svg>
-      </a>
-
-      {/* 호버 효과를 위한 배경 그라데이션 */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-50/0 to-primary-50/0 dark:from-primary-900/0 dark:to-primary-900/0 group-hover:from-primary-50/50 group-hover:to-primary-100/30 dark:group-hover:from-primary-900/20 dark:group-hover:to-primary-800/20 transition-all duration-300 pointer-events-none" />
+          <span>자세히 보기</span>
+          <svg
+            className="w-4 h-4 group-hover/link:translate-x-1 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   );
 }
