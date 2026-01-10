@@ -10,8 +10,11 @@ function App() {
 
   // 사주킹 프로젝트 찾기
   const sajuking = projects.find(p => p.id === '1');
-  // 나머지 프로젝트들
-  const subProjects = projects.filter(p => p.id !== '1');
+  // 나머지 프로젝트들을 지정된 순서로 정렬
+  const subProjectsOrder = ['6', '2', '5', '3', '4']; // FitFlow AI Coach, 타로킹, Archive Gram, 토지맥, 열네 밤의 꿈
+  const subProjects = subProjectsOrder
+    .map(id => projects.find(p => p.id === id))
+    .filter((project): project is Project => project !== undefined);
 
   const handleOpenModal = (project: Project) => {
     setSelectedProject(project);
@@ -30,10 +33,11 @@ function App() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* 로고 */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 flex items-center justify-center rounded" style={{ backgroundColor: '#6C5CE7' }}>
-              <span className="text-white font-bold text-xl">B</span>
-            </div>
-            <span className="text-white font-semibold text-lg">Builderthon 2026</span>
+            <img 
+              src="/fc-logo-dark-mode.svg" 
+              alt="Fast Campus Logo" 
+              className="h-[26px] md:h-[32px] w-auto"
+            />
           </div>
           {/* 헤더 텍스트 */}
           <span className="text-white text-sm md:text-base">AI Directors Portfolio</span>
@@ -44,10 +48,7 @@ function App() {
       <section className="relative w-full py-20 flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#130f40' }}>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span style={{ color: '#ffffff' }}>Build the </span>
-            <span className="gradient-text">
-              Future
-            </span>
+            <span className="gradient-title">2026 FASTCAMPUS AI HACKERTHON</span>
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed mb-2" style={{ color: '#ffffff' }}>
             패스트캠퍼스 빌더톤 2026 참가 포트폴리오입니다.
@@ -73,16 +74,20 @@ function App() {
             </div>
 
             {/* 사주킹 큰 카드 */}
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl" style={{ backgroundColor: '#30336b' }}>
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl card-hover group" style={{ backgroundColor: '#30336b' }}>
               {/* 배경 이미지 */}
               {sajuking.image && (
                 <div className="relative w-full h-[500px] md:h-[600px] overflow-hidden">
                   <img
                     src={sajuking.image}
                     alt={sajuking.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
                   />
+                  {/* AI Fortune 뱃지 */}
+                  <span className="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm z-10" style={{ backgroundColor: 'rgba(126, 214, 223, 0.9)', color: '#130f40' }}>
+                    AI Fortune
+                  </span>
                   {/* 그라데이션 오버레이 */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#130f40]/95 via-[#130f40]/60 to-transparent" />
                   
@@ -94,12 +99,30 @@ function App() {
                       </span>
                     </div>
                     <h3 className="text-3xl md:text-5xl font-bold mb-4" style={{ color: '#ffffff' }}>
-                      AI 기반 모던 사주 분석 플랫폼 '사주킹 (SajuKing)'
+                      사주킹 (SajuKing)
                     </h3>
-                    <p className="text-lg md:text-xl mb-6 max-w-3xl leading-relaxed" style={{ color: '#ffffff', opacity: 0.95 }}>
-                      복잡한 명리학을 현대적인 언어로 재해석하고, MBTI와 결합하여 2030 MZ세대에게<br />
-                      최적화된 AI 운세 서비스입니다.
+                    <p className="text-lg md:text-xl mb-4 max-w-3xl leading-relaxed" style={{ color: '#ffffff', opacity: 0.95 }}>
+                      GPT-5.2와 Gemini-3.0을 결합한 AI 운세 에이전트입니다. 2030 MZ세대의 데이터 패턴을 분석하여, 전문 용어 대신 스토리텔링 기반의 직관적인 사주 해석을 제공합니다.
                     </p>
+                    
+                    {/* 사용된 기술 태그 */}
+                    <div className="mb-6">
+                      <h4 className="text-sm font-semibold mb-3" style={{ color: '#ffffff', opacity: 0.9 }}>
+                        사용된 기술
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {['GPT-5.2', 'Supabase', 'React', 'Data Analysis'].map((tech, index) => (
+                          <span
+                            key={index}
+                            className="px-3 py-1.5 text-sm font-medium rounded-md backdrop-blur-sm"
+                            style={{ backgroundColor: 'rgba(126, 214, 223, 0.2)', color: '#ffffff', border: '1px solid rgba(126, 214, 223, 0.4)' }}
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
                     <button
                       onClick={() => handleOpenModal(sajuking)}
                       className="btn-flat-primary inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium hover:shadow-lg"
@@ -159,7 +182,7 @@ function App() {
       <footer className="mt-20 py-12 border-t" style={{ backgroundColor: '#130f40', borderColor: '#30336b' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-lg" style={{ color: '#ffffff', opacity: 0.8 }}>
-            © 2024 AI Directors. All rights reserved.
+            © 2026 AI Directors. All rights reserved.
           </p>
         </div>
       </footer>

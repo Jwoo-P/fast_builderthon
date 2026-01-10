@@ -69,5 +69,15 @@
     color: transparent;
     display: inline-block;
   }
+
+  /* 히어로 타이틀 그라데이션 스타일 */
+  .gradient-title {
+    background: linear-gradient(135deg, #7ed6df 0%, #22a6b3 33%, #f9ca24 66%, #e056fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+  }
 }
 

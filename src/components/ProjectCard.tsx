@@ -19,7 +19,7 @@ export default function ProjectCard({ project, onOpenModal }: ProjectCardProps) 
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#130f40]/80 via-[#130f40]/0 to-[#130f40]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           {project.category && (
-            <span className="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm" style={{ backgroundColor: 'rgba(76, 207, 250, 0.9)', color: '#130f40' }}>
+            <span className="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm" style={{ backgroundColor: 'rgba(126, 214, 223, 0.9)', color: '#130f40' }}>
               {project.category}
             </span>
           )}
