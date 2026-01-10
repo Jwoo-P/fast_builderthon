@@ -45,12 +45,7 @@ function App() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span style={{ color: '#ecf0f1' }}>Build the </span>
-            <span style={{ 
-              background: 'linear-gradient(135deg, #3498db 0%, #9b59b6 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
-            }}>
+            <span className="gradient-text">
               Future
             </span>
           </h1>

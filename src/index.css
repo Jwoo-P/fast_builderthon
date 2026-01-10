@@ -48,5 +48,15 @@
   .modal-scroll::-webkit-scrollbar-thumb:hover {
     background: #95a5a6;
   }
+
+  /* 그라데이션 텍스트 스타일 */
+  .gradient-text {
+    background: linear-gradient(135deg, #3498db 0%, #f1c40f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+  }
 }
 
