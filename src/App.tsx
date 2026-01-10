@@ -77,44 +77,44 @@ function App() {
             <div className="relative overflow-hidden rounded-2xl shadow-2xl card-hover group" style={{ backgroundColor: '#30336b' }}>
               {/* 배경 이미지 */}
               {sajuking.image && (
-                <div className="relative w-full h-[500px] md:h-[600px] overflow-hidden">
+                <div className="relative w-full min-h-[550px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[700px] overflow-hidden">
                   <img
                     src={sajuking.image}
                     alt={sajuking.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full min-h-[550px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[700px] object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
                   />
                   {/* AI Fortune 뱃지 */}
                   <span className="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm z-10" style={{ backgroundColor: 'rgba(126, 214, 223, 0.9)', color: '#130f40' }}>
                     AI Fortune
                   </span>
-                  {/* 그라데이션 오버레이 */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#130f40]/95 via-[#130f40]/60 to-transparent" />
+                  {/* 그라데이션 오버레이 - 하단 절반에만 적용하여 상단 절반이 잘 보이도록 */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-[#130f40]/95 via-[#130f40]/70 to-transparent" />
                   
-                  {/* 카드 내용 */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-                    <div className="mb-4">
+                  {/* 카드 내용 - 스크롤 없이 모든 내용 표시, 모바일에서 간격 최적화 */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 md:p-12">
+                    <div className="mb-2 sm:mb-4">
                       <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: '#ffffff', opacity: 0.9 }}>
                         MAIN PROJECT
                       </span>
                     </div>
-                    <h3 className="text-3xl md:text-5xl font-bold mb-4" style={{ color: '#ffffff' }}>
+                    <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-2 sm:mb-4" style={{ color: '#ffffff' }}>
                       사주킹 (SajuKing)
                     </h3>
-                    <p className="text-lg md:text-xl mb-4 max-w-3xl leading-relaxed" style={{ color: '#ffffff', opacity: 0.95 }}>
+                    <p className="text-sm sm:text-lg md:text-xl mb-3 sm:mb-4 max-w-3xl leading-relaxed" style={{ color: '#ffffff', opacity: 0.95 }}>
                       GPT-5.2와 Gemini-3.0을 결합한 AI 운세 에이전트입니다. 2030 MZ세대의 데이터 패턴을 분석하여, 전문 용어 대신 스토리텔링 기반의 직관적인 사주 해석을 제공합니다.
                     </p>
                     
                     {/* 사용된 기술 태그 */}
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold mb-3" style={{ color: '#ffffff', opacity: 0.9 }}>
+                    <div className="mb-3 sm:mb-6">
+                      <h4 className="text-xs sm:text-sm font-semibold mb-2 sm:mb-3" style={{ color: '#ffffff', opacity: 0.9 }}>
                         사용된 기술
                       </h4>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1.5 sm:gap-2">
                         {['GPT-5.2', 'Supabase', 'React', 'Data Analysis'].map((tech, index) => (
                           <span
                             key={index}
-                            className="px-3 py-1.5 text-sm font-medium rounded-md backdrop-blur-sm"
+                            className="px-2 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm font-medium rounded-md backdrop-blur-sm"
                             style={{ backgroundColor: 'rgba(126, 214, 223, 0.2)', color: '#ffffff', border: '1px solid rgba(126, 214, 223, 0.4)' }}
                           >
                             {tech}
@@ -125,11 +125,11 @@ function App() {
 
                     <button
                       onClick={() => handleOpenModal(sajuking)}
-                      className="btn-flat-primary inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium hover:shadow-lg"
+                      className="btn-flat-primary inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base rounded-lg font-medium hover:shadow-lg"
                     >
                       <span>자세히 보기</span>
                       <svg
-                        className="w-5 h-5"
+                        className="w-4 sm:w-5 h-4 sm:h-5"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
