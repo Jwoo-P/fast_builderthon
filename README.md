@@ -1,6 +1,6 @@
-# Side Projects & Dev Experiments
+# AI Directors의 포트폴리오
 
-서비스중인 프로덕트를 한곳에 모아서 제공하는 웹페이지입니다.
+기존에 제작했었던 프로덕트들을 한곳에 모아서 제공합니다
 
 ## 🚀 시작하기
 
