@@ -12,21 +12,21 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }}
+      style={{ backgroundColor: 'rgba(19, 15, 64, 0.95)' }}
       onClick={onClose}
     >
       <div
         className="relative w-full max-w-4xl max-h-[90vh] flex flex-col rounded-2xl shadow-2xl overflow-hidden"
-        style={{ backgroundColor: '#34495e' }}
+        style={{ backgroundColor: '#30336b' }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* 헤더 영역 (고정) */}
-        <div className="relative flex-shrink-0 px-8 pt-8 pb-4" style={{ backgroundColor: '#34495e' }}>
+        <div className="relative flex-shrink-0 px-8 pt-8 pb-4" style={{ backgroundColor: '#30336b' }}>
           {/* 닫기 버튼 */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-700 transition-colors"
-            style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', color: '#ecf0f1' }}
+            className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#130f40] transition-colors"
+            style={{ backgroundColor: 'rgba(19, 15, 64, 0.7)', color: '#ffffff' }}
             aria-label="닫기"
           >
             <svg
@@ -45,7 +45,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
           </button>
 
           {/* 제목 */}
-          <h2 className="text-3xl md:text-4xl font-bold pr-12" style={{ color: '#ecf0f1' }}>
+          <h2 className="text-3xl md:text-4xl font-bold pr-12" style={{ color: '#ffffff' }}>
             {project.name}
           </h2>
         </div>
@@ -53,7 +53,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
         {/* 스크롤 가능한 내용 영역 */}
         <div 
           className="flex-1 overflow-y-auto px-8 pb-8 modal-scroll"
-          style={{ backgroundColor: '#34495e' }}
+          style={{ backgroundColor: '#30336b' }}
         >
 
           {/* 썸네일 이미지 */}
@@ -70,13 +70,13 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
           {/* 서비스 소개 섹션 */}
           <div className="mb-8">
             <div className="mb-4">
-              <h3 className="text-sm font-semibold mb-2" style={{ color: '#ecf0f1', opacity: 0.7 }}>
+              <h3 className="text-sm font-semibold mb-2" style={{ color: '#ffffff', opacity: 0.7 }}>
                 서비스 소개
               </h3>
-              <h4 className="text-xl font-bold mb-2" style={{ color: '#ecf0f1' }}>
+              <h4 className="text-xl font-bold mb-2" style={{ color: '#ffffff' }}>
                 {project.name}
               </h4>
-              <p className="text-base leading-relaxed mb-4" style={{ color: '#ecf0f1', opacity: 0.9 }}>
+              <p className="text-base leading-relaxed mb-4" style={{ color: '#ffffff', opacity: 0.9 }}>
                 {project.description}
               </p>
             </div>
@@ -85,8 +85,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all hover:shadow-lg"
-              style={{ backgroundColor: '#3498db', color: '#ffffff' }}
+              className="btn-project-link inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium hover:shadow-lg"
             >
               <span>프로젝트 바로가기</span>
               <svg
@@ -112,13 +111,13 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               {project.problem && (
                 <div 
                   className="p-6 rounded-xl flex flex-col h-full"
-                  style={{ backgroundColor: '#2c3e50', border: '1px solid #34495e' }}
+                  style={{ backgroundColor: '#130f40', border: '1px solid #30336b' }}
                 >
                   {/* 아이콘 + 제목 */}
                   <div className="flex items-center gap-3 mb-4">
                     <div
                       className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
-                      style={{ backgroundColor: '#e74c3c' }}
+                      style={{ backgroundColor: '#FF7675' }}
                     >
                       <svg
                         className="w-6 h-6"
@@ -131,12 +130,12 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                         <circle cx="12" cy="12" r="2" fill="currentColor"/>
                       </svg>
                     </div>
-                    <h4 className="text-lg font-semibold" style={{ color: '#ecf0f1' }}>
+                    <h4 className="text-lg font-semibold" style={{ color: '#ffffff' }}>
                       문제 정의
                     </h4>
                   </div>
                   {/* 내용 */}
-                  <p className="text-base leading-relaxed flex-1" style={{ color: '#ecf0f1', opacity: 0.9 }}>
+                  <p className="text-base leading-relaxed flex-1" style={{ color: '#ffffff', opacity: 0.9 }}>
                     {project.problem}
                   </p>
                 </div>
@@ -146,13 +145,13 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               {project.solution && (
                 <div 
                   className="p-6 rounded-xl flex flex-col h-full"
-                  style={{ backgroundColor: '#2c3e50', border: '1px solid #34495e' }}
+                  style={{ backgroundColor: '#130f40', border: '1px solid #30336b' }}
                 >
                   {/* 아이콘 + 제목 */}
                   <div className="flex items-center gap-3 mb-4">
                     <div
                       className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
-                      style={{ backgroundColor: '#27ae60' }}
+                      style={{ backgroundColor: '#00B894' }}
                     >
                       <svg
                         className="w-6 h-6"
@@ -163,12 +162,12 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                         <path d="M9 21c0 .5.4 1 1 1h4c.6 0 1-.5 1-1v-1H9v1zm3-19C8.1 2 5 5.1 5 9c0 2.4 1.2 4.5 3 5.7V17c0 .5.4 1 1 1h6c.6 0 1-.5 1-1v-2.3c1.8-1.3 3-3.4 3-5.7 0-3.9-3.1-7-7-7z"/>
                       </svg>
                     </div>
-                    <h4 className="text-lg font-semibold" style={{ color: '#ecf0f1' }}>
+                    <h4 className="text-lg font-semibold" style={{ color: '#ffffff' }}>
                       해결 방안
                     </h4>
                   </div>
                   {/* 내용 */}
-                  <p className="text-base leading-relaxed flex-1" style={{ color: '#ecf0f1', opacity: 0.9 }}>
+                  <p className="text-base leading-relaxed flex-1" style={{ color: '#ffffff', opacity: 0.9 }}>
                     {project.solution}
                   </p>
                 </div>
@@ -182,13 +181,13 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
             {project.technologies && project.technologies.length > 0 && (
               <div 
                 className="p-6 rounded-xl flex flex-col"
-                style={{ backgroundColor: '#2c3e50', border: '1px solid #34495e' }}
+                style={{ backgroundColor: '#130f40', border: '1px solid #1a1549' }}
               >
                 {/* 아이콘 + 제목 */}
                 <div className="flex items-center gap-3 mb-4">
                   <div
                     className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: '#9b59b6' }}
+                    style={{ backgroundColor: '#6C5CE7' }}
                   >
                     <svg
                       className="w-6 h-6"
@@ -211,7 +210,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                       />
                     </svg>
                   </div>
-                  <h4 className="text-lg font-semibold" style={{ color: '#ecf0f1' }}>
+                  <h4 className="text-lg font-semibold" style={{ color: '#ffffff' }}>
                     기술 스택
                   </h4>
                 </div>
@@ -221,7 +220,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                     <span
                       key={index}
                       className="px-4 py-2 text-sm font-medium rounded-md"
-                      style={{ backgroundColor: '#34495e', color: '#ecf0f1', border: '1px solid #34495e' }}
+                      style={{ backgroundColor: '#30336b', color: '#ffffff', border: '1px solid #30336b' }}
                     >
                       {tech}
                     </span>
@@ -234,29 +233,29 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
             {project.challenge && (
               <div 
                 className="p-6 rounded-xl flex flex-col"
-                style={{ backgroundColor: '#2c3e50', border: '1px solid #34495e' }}
+                style={{ backgroundColor: '#130f40', border: '1px solid #1a1549' }}
               >
                 {/* 아이콘 + 제목 */}
                 <div className="flex items-center gap-3 mb-4">
                   <div
                     className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: '#f39c12' }}
+                    style={{ backgroundColor: '#FDCB6E' }}
                   >
                     <svg
                       className="w-6 h-6"
                       fill="currentColor"
                       viewBox="0 0 24 24"
-                      style={{ color: '#ffffff' }}
+                      style={{ color: '#130f40' }}
                     >
                       <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/>
                     </svg>
                   </div>
-                  <h4 className="text-lg font-semibold" style={{ color: '#ecf0f1' }}>
+                  <h4 className="text-lg font-semibold" style={{ color: '#ffffff' }}>
                     기술적 한계 + 해결책
                   </h4>
                 </div>
                 {/* 내용 */}
-                <p className="text-base leading-relaxed" style={{ color: '#ecf0f1', opacity: 0.9 }}>
+                <p className="text-base leading-relaxed" style={{ color: '#ffffff', opacity: 0.9 }}>
                   {project.challenge}
                 </p>
               </div>

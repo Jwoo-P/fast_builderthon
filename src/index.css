@@ -4,8 +4,8 @@
 
 @layer base {
   body {
-    background-color: #2c3e50;
-    color: #ecf0f1;
+    background-color: #130f40;
+    color: #ffffff;
   }
 }
 
@@ -16,19 +16,30 @@
   
   /* Flat UI Colors 버튼 스타일 */
   .btn-flat-primary {
-    background-color: #3498db;
-    color: #ecf0f1;
+    background-color: #0984E3;
+    color: #ffffff;
     transition: all 0.2s;
   }
   
   .btn-flat-primary:hover {
-    background-color: #2980b9;
+    background-color: #076EBC;
+  }
+
+  /* 프로젝트 바로가기 버튼 스타일 */
+  .btn-project-link {
+    background-color: #0984E3;
+    color: #ffffff;
+    transition: all 0.2s;
+  }
+
+  .btn-project-link:hover {
+    background-color: #076EBC;
   }
 
   /* 모달 스크롤바 스타일 */
   .modal-scroll {
     scrollbar-width: thin;
-    scrollbar-color: #7f8c8d #34495e;
+    scrollbar-color: #636E72 #30336b;
   }
 
   .modal-scroll::-webkit-scrollbar {
@@ -36,22 +47,22 @@
   }
 
   .modal-scroll::-webkit-scrollbar-track {
-    background: #34495e;
+    background: #30336b;
     border-radius: 0 0 16px 0;
   }
 
   .modal-scroll::-webkit-scrollbar-thumb {
-    background: #7f8c8d;
+    background: #636E72; /* American River */
     border-radius: 4px;
   }
 
   .modal-scroll::-webkit-scrollbar-thumb:hover {
-    background: #95a5a6;
+    background: #B2BEC3; /* Soothing Breeze */
   }
 
-  /* 그라데이션 텍스트 스타일 */
+  /* 그라데이션 텍스트 스타일 - AU 팔레트 적용 */
   .gradient-text {
-    background: linear-gradient(135deg, #3498db 0%, #f1c40f 100%);
+    background: linear-gradient(135deg, #4BCFFA 0%, #34E7E4 50%, #00B894 100%); /* Faded Poster -> Green Darner Tail -> Mint Leaf */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
