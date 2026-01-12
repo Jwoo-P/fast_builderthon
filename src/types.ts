@@ -11,3 +11,14 @@ export interface Project {
   challenge?: string; // 기술적 한계 + 해결책
 }
 
+export interface InnovationIdea {
+  id: string;
+  icon: string;
+  name: string;
+  description: string;
+  technologies: string[];
+  status: 'CONCEPT' | 'PLANNED' | 'PROTOTYPE' | 'MVP READY';
+  coreInnovation: string;
+  gradientColor: string; // 그라데이션 색상 (CSS gradient)
+}
+
