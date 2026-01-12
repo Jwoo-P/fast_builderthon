@@ -81,15 +81,24 @@ export default function InnovationIdeaCard({ idea }: InnovationIdeaCardProps) {
 
         {/* Core Innovation 하이라이트 */}
         <div 
-          className="rounded-lg p-4"
-          style={{ backgroundColor: '#130f40', border: '1px solid #30336b' }}
+          className="relative rounded-xl p-5 overflow-hidden group/innovation"
+          style={{ 
+            backgroundColor: 'rgb(19, 15, 64)',
+            border: '2px solid rgba(126, 214, 223, 0.4)'
+          }}
         >
-          <h4 className="text-xs font-semibold mb-2 uppercase tracking-wider" style={{ color: '#7ed6df' }}>
-            Core Innovation
-          </h4>
-          <p className="text-sm leading-relaxed whitespace-pre-line" style={{ color: '#ffffff', opacity: 0.95 }}>
-            {idea.coreInnovation}
-          </p>
+          {/* 내용 */}
+          <div className="relative z-10">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-lg">✨</span>
+              <h4 className="text-sm font-bold uppercase tracking-wider" style={{ color: '#7ed6df', letterSpacing: '0.1em' }}>
+                Core Innovation
+              </h4>
+            </div>
+            <p className="text-sm md:text-base leading-relaxed whitespace-pre-line font-medium" style={{ color: '#ffffff' }}>
+              {idea.coreInnovation}
+            </p>
+          </div>
         </div>
       </div>
     </div>
