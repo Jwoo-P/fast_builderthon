@@ -35,9 +35,13 @@ function App() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* 로고 */}
           <div className="flex items-center gap-2">
-            <span className="text-white text-xl md:text-2xl font-bold">AI Directors</span>
+            <img 
+              src="/logo.svg" 
+              alt="AI Directors" 
+              className="h-[30.24px] md:h-[40.32px] w-auto pb-[2px]"
+            />
             <span className="text-white text-sm md:text-base font-light opacity-70">|</span>
-            <span className="text-white text-xs md:text-sm font-light opacity-60">Builderthon 2026</span>
+            <span className="text-white text-xs md:text-sm font-light opacity-60 pt-[2px]">Builderthon 2026</span>
           </div>
           {/* 깃허브 링크 */}
           <a 
