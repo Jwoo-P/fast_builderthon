@@ -24,11 +24,11 @@ export const teamMembers: TeamMember[] = [
   {
     id: '3',
     name: '김민균',
-    nameEn: 'Kim Min-kyun',
+    nameEn: 'Kim Min Gyun',
     role: 'AI Product Manager',
     specialties: ['Tech Lead', 'Modeling'],
     philosophy: 'AI 모델의 가능성을 실제 프로덕트 가치로 구현합니다.',
-    avatarImage: '/Kim Min-kyun.png',
+    avatarImage: '/Kim Min Gyun.png',
     glowColor: 'from-cyan-500/60 to-blue-500/60', // 사이언-블루 그라데이션
   },
   {
