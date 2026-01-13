@@ -218,7 +218,9 @@ function App() {
               AI Directors
             </h2>
             <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: '#ffffff', opacity: 0.9 }}>
-              우리는 전원 AI 기획자(PM)로 구성된 팀입니다. 문제를 정의하고, 최적의 AI 기술을 설계하며, 이를 사용자 가치로 연결하는 <strong>End-to-End 빌더</strong>들입니다.
+              우리는 전원 AI 기획자(PM)로 구성된 팀입니다.<br />
+              문제를 정의하고, 최적의 AI 기술을 설계하며,<br />
+              이를 사용자 가치로 연결하는 <strong>End-to-End 빌더</strong>들입니다.
             </p>
           </div>
 
