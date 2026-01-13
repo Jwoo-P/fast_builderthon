@@ -6,8 +6,8 @@ export const teamMembers: TeamMember[] = [
     name: '권동영',
     nameEn: 'Gwon Dongyeong',
     role: 'AI Product Manager',
-    specialties: ['System Design', 'AI Strategy'],
-    philosophy: '기술적 구조와 비즈니스 목표를 일치시키는 전략가',
+    specialties: ['Data Driven', 'AI Service'],
+    philosophy: '데이터의 논리로 AI 서비스의 방향성을 명확히 제시합니다',
     avatarImage: '/Gwon Dongyeong.png',
     glowColor: 'from-blue-500/60 to-cyan-500/60', // 블루-사이언 그라데이션
   },
@@ -26,8 +26,8 @@ export const teamMembers: TeamMember[] = [
     name: '김민균',
     nameEn: 'Kim Min Gyun',
     role: 'AI Product Manager',
-    specialties: ['Tech Lead', 'Modeling'],
-    philosophy: 'AI 모델의 가능성을 실제 프로덕트 가치로 구현합니다.',
+    specialties: ['AI UX', 'Execution Lead'],
+    philosophy: 'WHY를 나침반 삼아, 흩어진 점을 결과로 잇는 기획자',
     avatarImage: '/Kim Min Gyun.png',
     glowColor: 'from-cyan-500/60 to-blue-500/60', // 사이언-블루 그라데이션
   },

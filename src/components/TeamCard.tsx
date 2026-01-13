@@ -52,7 +52,7 @@ export default function TeamCard({ member }: TeamCardProps) {
         </div>
 
         {/* 4. 한 줄 소개 (Philosophy) */}
-        <p className="text-sm text-slate-400 italic leading-relaxed">
+        <p className="text-sm text-slate-400 italic leading-relaxed whitespace-pre-line">
           "{member.philosophy}"
         </p>
       </div>
