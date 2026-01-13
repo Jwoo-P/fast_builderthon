@@ -4,11 +4,11 @@ export const teamMembers: TeamMember[] = [
   {
     id: '1',
     name: '권동영',
-    nameEn: 'Gwon Dong-young',
+    nameEn: 'Gwon Dongyeong',
     role: 'AI Product Manager',
     specialties: ['System Design', 'AI Strategy'],
     philosophy: '기술적 구조와 비즈니스 목표를 일치시키는 전략가',
-    avatarImage: '/Gwon Dong-young.png',
+    avatarImage: '/Gwon Dongyeong.png',
     glowColor: 'from-blue-500/60 to-cyan-500/60', // 블루-사이언 그라데이션
   },
   {
