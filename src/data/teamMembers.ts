@@ -44,11 +44,11 @@ export const teamMembers: TeamMember[] = [
   {
     id: '5',
     name: '윤소율',
-    nameEn: 'Yoon So-yul',
+    nameEn: 'Yun So-Yul',
     role: 'AI Product Manager',
     specialties: ['Project Mgmt', 'Communication'],
     philosophy: '팀의 시너지를 극대화하여 프로젝트를 완수로 이끕니다.',
-    avatarImage: '/Yoon So-yul.png',
+    avatarImage: '/Yun So-Yul.png',
     glowColor: 'from-teal-500/60 to-cyan-500/60', // 틸-사이언 그라데이션
   },
 ];
