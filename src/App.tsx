@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { projects } from './data/projects';
 import { innovationIdeas } from './data/innovationIdeas';
+import { teamMembers } from './data/teamMembers';
 import ProjectCard from './components/ProjectCard';
 import ProjectModal from './components/ProjectModal';
 import InnovationIdeaCard from './components/InnovationIdeaCard';
+import TeamCard from './components/TeamCard';
 import { Project } from './types';
 
 function App() {
@@ -79,7 +81,7 @@ function App() {
 
       {/* Representative Project 섹션 */}
       {sajuking && (
-        <section className="py-12 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#130f40' }}>
+        <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#130f40' }}>
           <div className="max-w-7xl mx-auto">
             {/* 섹션 헤더 */}
             <div className="mb-8 flex items-center gap-2">
@@ -169,7 +171,7 @@ function App() {
       )}
 
       {/* Sub Projects 섹션 */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#130f40' }}>
+      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#130f40' }}>
         <div className="max-w-7xl mx-auto">
           {/* 섹션 헤더 */}
           <div className="mb-8">
@@ -188,7 +190,7 @@ function App() {
       </section>
 
       {/* Innovation Ideas 섹션 */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#130f40' }}>
+      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#130f40' }}>
         <div className="max-w-7xl mx-auto">
           {/* 섹션 헤더 */}
           <div className="mb-8 flex items-center gap-2">
@@ -202,6 +204,33 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {innovationIdeas.map((idea) => (
               <InnovationIdeaCard key={idea.id} idea={idea} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 팀 소개 섹션 */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#130f40' }}>
+        <div className="max-w-7xl mx-auto">
+          {/* 섹션 헤더 */}
+          <div className="mb-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: '#ffffff' }}>
+              AI Directors
+            </h2>
+            <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: '#ffffff', opacity: 0.9 }}>
+              우리는 전원 AI 기획자(PM)로 구성된 팀입니다. 문제를 정의하고, 최적의 AI 기술을 설계하며, 이를 사용자 가치로 연결하는 <strong>End-to-End 빌더</strong>들입니다.
+            </p>
+          </div>
+
+          {/* 팀 멤버 그리드 - 상단 3명, 하단 2명 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            {teamMembers.slice(0, 3).map((member) => (
+              <TeamCard key={member.id} member={member} />
+            ))}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {teamMembers.slice(3, 5).map((member) => (
+              <TeamCard key={member.id} member={member} />
             ))}
           </div>
         </div>

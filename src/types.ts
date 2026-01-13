@@ -22,3 +22,14 @@ export interface InnovationIdea {
   gradientColor: string; // 그라데이션 색상 (CSS gradient)
 }
 
+export interface TeamMember {
+  id: string;
+  name: string;
+  nameEn: string;
+  role: string;
+  specialties: string[]; // 전문 분야 태그 (2개)
+  philosophy: string; // 한 줄 소개
+  avatarImage?: string; // 3D 아바타 이미지 경로
+  glowColor: string; // 그라데이션 배경 색상 (Tailwind 클래스)
+}
+
