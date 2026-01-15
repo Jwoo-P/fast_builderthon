@@ -61,8 +61,8 @@ function App() {
               alt="AI Directors" 
               className="h-[30.24px] md:h-[40.32px] w-auto pb-[2px]"
             />
-            <span className="text-white text-sm md:text-base font-light opacity-70">|</span>
-            <span className="text-white text-xs md:text-sm font-light opacity-60 pt-[2px]">Builderthon 2026</span>
+            <span className="text-white text-sm md:text-base font-light opacity-70 max-[390px]:hidden">|</span>
+            <span className="text-white text-xs md:text-sm font-light opacity-60 pt-[2px] max-[390px]:hidden">Builderthon 2026</span>
           </div>
           {/* 깃허브 드롭다운 */}
           <div className="relative" ref={githubDropdownRef}>
